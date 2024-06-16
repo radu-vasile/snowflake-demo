@@ -13,10 +13,11 @@ workflows:
                 region: eu-west-1
           repo: "${AWS_RESOURCE_NAME}"
           tag: "${CIRCLE_SHA1}"
+          extra_build_args: '--build-arg PAT_USER=${PAT_USER} --build-arg PAT=${PAT}'
           filters:
             branches:
               only:
-                - main
+                - test
       - aws-ecs/deploy_service_update:
           requires:
             - aws-ecr/build_and_push_image

@@ -1,15 +1,9 @@
 version: 2.1
 orbs:
   aws-cli: circleci/aws-cli@4.1.3
+  aws-ecr: circleci/aws-ecr@9.1.0
+  aws-ecs: circleci/aws-ecs@4.0.0
 
-jobs:
-    run-database-migration:
-        steps:
-            - run:
-                name: Run Script
-                command: |
-                schemachange -f migrations -a ottaxsx-cq08716 -u RADU9 -r ACCOUNTADMIN -w COMPUTE_WH -d TC2_TEST -c TC2_TEST.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table
-                
 workflows:
   build-and-deploy-develop:
     jobs:

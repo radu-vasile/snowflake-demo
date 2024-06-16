@@ -35,7 +35,7 @@ workflows:
           filters:
             branches:
               only:
-                - main
+                - master
           context: snowflake-dev
 
 

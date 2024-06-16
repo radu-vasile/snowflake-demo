@@ -29,7 +29,7 @@ workflows:
           filters:
             branches:
               only:
-                - master
+                - test
           context: snowflake-dev
 
 
